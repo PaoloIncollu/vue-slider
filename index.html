@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template html css java script</title>
+        <title>Vue Slider</title>
 
         <!--Bootstrap Css-->
 
@@ -21,20 +21,34 @@
 
     <body>
         
-        <header>
+        <div id="app">
 
-
-        </header>
-
-        <main>
-
-
-        </main>
-
-        <footer>
-
-            
-        </footer>
+            <div class="container">
+                <div class="slider-wrapper" tabindex="0">
+    
+                    <div class="item" >
+                        <img :src="slides[activeImage].image" :alt="slides[activeImage].title">
+                        <div class="text">
+                            <h3>{{slides[activeImage].title}}</h3>
+                            <p>
+                                {{slides[activeImage].text}}
+                                
+                            </p>
+                        </div>
+                    </div>
+    
+                    <div class="thumbs" >
+                        <div class="prev" @click.prevent="prevSlide()"></div>
+                        <div class="next" @click.prevent="nextSlide()"></div>
+                        <div class="thumb" @click="thumbImage(i)" :class="activeImage == i ? 'active' : '' " v-for="(currentImage, i) in slides">
+                            <img :src="currentImage.image">
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
 
         <!--Java-->
 

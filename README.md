@@ -1,1 +1,1 @@
-# template-html-css-js
+# vue-slider
