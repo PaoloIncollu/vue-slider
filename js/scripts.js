@@ -56,6 +56,14 @@ createApp({
       thumbImage(i){
         this.activeImage = i;
       }
+    },
+
+    mounted(){
+      //funzione per autoplay
+      setInterval(() => {
+        this.nextSlide();
+      }, 3000);
+
     }
 
 }).mount('#app');
