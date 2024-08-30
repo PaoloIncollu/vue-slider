@@ -30,7 +30,8 @@ createApp({
     ],
     
     activeImage: 0,
-    
+    autoplay: null
+
     }
 
   },
@@ -55,14 +56,32 @@ createApp({
       //funzione per cambiare l'indice alla thumb image
       thumbImage(i){
         this.activeImage = i;
-      }
+      },
+      
+      //funzione per autoplay
+      startAutoplay(){
+
+        if(this.autoplay == null){
+
+          setInterval(() => {
+            this.nextSlide();
+          }, 3000);
+        }
+        
+      },
+
+     /* stopAutoplay(){
+        if(this.autoplay != null){
+
+          clearInterval(this.autoplay);
+          this.autoplay = null;
+        }
+      }*/
     },
 
     mounted(){
-      //funzione per autoplay
-      setInterval(() => {
-        this.nextSlide();
-      }, 3000);
+      
+      this.startAutoplay();
 
     }
 
